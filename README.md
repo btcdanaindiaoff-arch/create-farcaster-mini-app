@@ -70,6 +70,11 @@ You can also run the script directly for quick iteration:
 ```bash
 node ./bin/index.js
 ```
+const generateNonce = async () => {
+  const response = await fetch('/api/auth/nonce');
+  const data = await response.json();
+  setNonce(data.nonce);
+};
 
 However, this does not fully replicate the npx install flow and may not catch all issues that would occur in a real user environment.
 
